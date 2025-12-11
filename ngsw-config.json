@@ -32,8 +32,11 @@
   ],
   "dataGroups": [
     {
-      "name": "photos-api",
-      "urls": ["https://picsum.photos/*"],
+      "name": "amiibo-api",
+      "urls": [
+        "https://amiiboapi.com/api/*",
+        "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/*"
+      ],
       "cacheConfig": {
         "maxSize": 100,
         "maxAge": "1h",

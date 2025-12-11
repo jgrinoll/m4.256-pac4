@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { PhotosListComponent } from './pages/photos-list/photos-list.component';
-import { PhotosDetailComponent } from './pages/photos-detail/photos-detail.component';
+import { AmiiboListComponent } from './pages/amiibo-list/amiibo-list.component';
+import { AmiiboDetailComponent } from './pages/amiibo-detail/amiibo-detail.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'photos', pathMatch: 'full' },
-  { path: 'photos', component: PhotosListComponent },
-  { path: 'photos/:id', component: PhotosDetailComponent },
+  { path: '', redirectTo: 'amiibos', pathMatch: 'full' },
+  { path: 'amiibos', component: AmiiboListComponent },
+  { path: 'amiibos/:id', component: AmiiboDetailComponent },
 ];
