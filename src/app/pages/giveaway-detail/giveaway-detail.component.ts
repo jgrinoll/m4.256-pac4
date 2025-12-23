@@ -1,11 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { Giveaway } from '../../models/giveaway.interface';
 import { GiveawayService } from '../../services/giveaway.service';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-giveaway-detail',
-  imports: [RouterLink],
+  imports: [RouterLink, MatExpansionModule, MatButtonModule, DatePipe],
   templateUrl: './giveaway-detail.component.html',
   styleUrl: './giveaway-detail.component.scss',
 })
