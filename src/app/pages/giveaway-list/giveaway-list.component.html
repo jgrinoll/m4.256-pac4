@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Giveaway List</h1>
+  <ul class="list-group">
+    @for (giveaway of giveaways(); track giveaway.id) {
+    <a
+      [routerLink]="['/giveaways', giveaway.id]"
+      class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn"
+      >{{ giveaway.id }} - {{ giveaway.title }}</a
+    >
+    }
+  </ul>
+</div>

@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="w-100 d-flex">
+    <a class="btn btn-danger ms-auto" routerLink="/">Back</a>
+  </div>
+  @if (giveawayDetail()) {
+  <div class="row animate__animated animate__bounce animate__fadeIn">
+    <div class="col-md-12">
+      <h1>{{ giveawayDetail().title }}</h1>
+      <div class="text-center my-3">
+        <button
+          class="btn btn-primary"
+          (click)="showAllDetails = !showAllDetails"
+        >
+          {{ showAllDetails ? "Hide details" : "Show all details" }}
+        </button>
+      </div>
+      @if (showAllDetails) {
+      <p>
+        <strong>Identifier:</strong>
+        {{ giveawayDetail().id }}
+      </p>
+      <p><strong>Worth:</strong> {{ giveawayDetail().worth }}</p>
+      <p><strong>URL:</strong> {{ giveawayDetail().open_giveaway_url }}</p>
+      <img
+        style="width: 50%; height: 50%"
+        src="{{ giveawayDetail().image }}"
+        alt="img-test"
+        class="rounded"
+      />
+
+      }
+    </div>
+  </div>
+  }
+</div>

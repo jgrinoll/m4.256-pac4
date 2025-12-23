@@ -32,11 +32,8 @@
   ],
   "dataGroups": [
     {
-      "name": "amiibo-api",
-      "urls": [
-        "https://amiiboapi.com/api/*",
-        "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/*"
-      ],
+      "name": "giveaway-api",
+      "urls": ["https://www.gamerpower.com/*"],
       "cacheConfig": {
         "maxSize": 100,
         "maxAge": "1h",

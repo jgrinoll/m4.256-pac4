@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { AmiiboListComponent } from './pages/amiibo-list/amiibo-list.component';
-import { AmiiboDetailComponent } from './pages/amiibo-detail/amiibo-detail.component';
+import { GiveawayListComponent } from './pages/giveaway-list/giveaway-list.component';
+import { GiveawayDetailComponent } from './pages/giveaway-detail/giveaway-detail.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'amiibos', pathMatch: 'full' },
-  { path: 'amiibos', component: AmiiboListComponent },
-  { path: 'amiibos/:id', component: AmiiboDetailComponent },
+  { path: '', redirectTo: 'giveaways', pathMatch: 'full' },
+  { path: 'giveaways', component: GiveawayListComponent },
+  { path: 'giveaways/:id', component: GiveawayDetailComponent },
 ];
