@@ -1,0 +1,41 @@
+<mat-card
+  class="giveaway-card"
+  [class.list-mode]="displayMode === 'list'"
+  [class.grid-mode]="displayMode === 'grid'"
+  [routerLink]="['/giveaways', giveaway.id]"
+>
+  @if (displayMode === 'list') {
+  <div class="card-content-list">
+    <img
+      class="card-image-list"
+      [src]="giveaway.thumbnail"
+      [alt]="giveaway.title"
+      class="ms-1"
+    />
+    <div class="card-details">
+      <mat-card-header>
+        <mat-card-title>{{ giveaway.title }}</mat-card-title>
+        <mat-card-subtitle>{{ giveaway.worth }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-chip-set>
+          <mat-chip>{{ giveaway.type }}</mat-chip>
+          <mat-chip>{{ giveaway.platforms }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+    </div>
+  </div>
+  } @else {
+  <img mat-card-image [src]="giveaway.thumbnail" [alt]="giveaway.title" />
+  <mat-card-header>
+    <mat-card-title>{{ giveaway.title }}</mat-card-title>
+    <mat-card-subtitle>{{ giveaway.worth }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-chip-set>
+      <mat-chip>{{ giveaway.type }}</mat-chip>
+      <mat-chip>{{ giveaway.platforms }}</mat-chip>
+    </mat-chip-set>
+  </mat-card-content>
+  }
+</mat-card>

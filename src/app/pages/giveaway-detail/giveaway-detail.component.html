@@ -1,6 +1,8 @@
 <div class="container mt-5">
   <div class="w-100 d-flex">
-    <button mat-raised-button color="warn" class="ms-auto" routerLink="/">Back</button>
+    <button mat-raised-button color="warn" class="ms-auto" routerLink="/">
+      Back
+    </button>
   </div>
   @if (giveawayDetail()) {
   <div class="row animate__animated animate__bounce animate__fadeIn">
@@ -12,6 +14,14 @@
             {{ showAllDetails ? "Hide details" : "Show all details" }}
           </mat-panel-title>
         </mat-expansion-panel-header>
+        <div class="text-center mb-3">
+          <img
+            style="width: 50%; height: 50%"
+            src="{{ giveawayDetail().image }}"
+            alt="img-test"
+            class="rounded"
+          />
+        </div>
         <div class="row">
           <div class="col-md-6">
             <p><strong>Worth:</strong> {{ giveawayDetail().worth }}</p>
@@ -21,10 +31,28 @@
             <p><strong>Users:</strong> {{ giveawayDetail().users }}</p>
           </div>
           <div class="col-md-6">
-            <p><strong>Published Date:</strong> {{ giveawayDetail().published_date | date:'dd/MM/yyyy' }}</p>
-            <p><strong>End Date:</strong> {{ giveawayDetail().end_date | date:'dd/MM/yyyy' }}</p>
-            <p><strong>Open Giveaway URL:</strong> <a href="{{ giveawayDetail().open_giveaway_url }}" target="_blank">{{ giveawayDetail().open_giveaway_url }}</a></p>
-            <p><strong>Gamerpower URL:</strong> <a href="{{ giveawayDetail().gamerpower_url }}" target="_blank">{{ giveawayDetail().gamerpower_url }}</a></p>
+            <p>
+              <strong>Published Date:</strong>
+              {{ giveawayDetail().published_date | date : "dd/MM/yyyy" }}
+            </p>
+            <p>
+              <strong>End Date:</strong>
+              {{ giveawayDetail().end_date | date : "dd/MM/yyyy" }}
+            </p>
+            <p>
+              <strong>Open Giveaway URL:</strong>
+              <a
+                href="{{ giveawayDetail().open_giveaway_url }}"
+                target="_blank"
+                >{{ giveawayDetail().open_giveaway_url }}</a
+              >
+            </p>
+            <p>
+              <strong>Gamerpower URL:</strong>
+              <a href="{{ giveawayDetail().gamerpower_url }}" target="_blank">{{
+                giveawayDetail().gamerpower_url
+              }}</a>
+            </p>
           </div>
         </div>
         <div>
@@ -34,14 +62,6 @@
         <div>
           <strong>Instructions:</strong>
           <pre>{{ giveawayDetail().instructions }}</pre>
-        </div>
-        <div class="text-center">
-          <img
-            style="width: 50%; height: 50%"
-            src="{{ giveawayDetail().image }}"
-            alt="img-test"
-            class="rounded"
-          />
         </div>
       </mat-expansion-panel>
     </div>

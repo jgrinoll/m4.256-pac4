@@ -1,12 +1,38 @@
 <div class="container">
-  <h1>Giveaway List</h1>
-  <ul class="list-group">
+  <div class="header">
+    <h2>Giveaway List</h2>
+    <div class="view-buttons">
+      <button
+        mat-icon-button
+        (click)="setViewMode('grid')"
+        [class.active]="viewMode() === 'grid'"
+        aria-label="Grid view"
+      >
+        <mat-icon>grid_view</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        (click)="setViewMode('list')"
+        [class.active]="viewMode() === 'list'"
+        aria-label="List view"
+      >
+        <mat-icon>view_list</mat-icon>
+      </button>
+    </div>
+  </div>
+  @if (loading()) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+  } @else {
+  <div
+    class="giveaway-container animate__animated animate__fadeIn"
+    [class.list-view]="viewMode() === 'list'"
+    [class.grid-view]="viewMode() === 'grid'"
+  >
     @for (giveaway of giveaways(); track giveaway.id) {
-    <a
-      [routerLink]="['/giveaways', giveaway.id]"
-      class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn"
-      >{{ giveaway.id }} - {{ giveaway.title }}</a
-    >
+    <app-giveaway-card [giveaway]="giveaway" [displayMode]="viewMode()" />
     }
-  </ul>
+  </div>
+  }
 </div>

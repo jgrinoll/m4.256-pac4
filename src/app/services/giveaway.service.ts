@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { Giveaway } from '../models/giveaway.interface';
 
 @Injectable({
@@ -12,7 +12,9 @@ export class GiveawayService {
   constructor(private http: HttpClient) {}
 
   getGiveaways(): Observable<Giveaway[]> {
-    return this.http.get<Giveaway[]>(`${this.api}/giveaways`);
+    return this.http.get<Giveaway[]>(`${this.api}/giveaways`).pipe(
+      delay(1500) // Perquè es vegi el Spinner bé
+    );
   }
 
   getGiveawayById(id: string): Observable<Giveaway> {

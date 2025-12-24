@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.view-buttons {
+  display: flex;
+  gap: 0.5rem;
+
+  button.active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  padding: 2rem;
+}
+
+.giveaway-container {
+  display: flex;
+  gap: 1rem;
+
+  &.grid-view {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.list-view {
+    flex-direction: column;
+  }
+}
