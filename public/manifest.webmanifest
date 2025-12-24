@@ -1,6 +1,6 @@
 {
-  "name": "pwa-demo",
-  "short_name": "pwa-demo",
+  "name": "Giveaways Browser",
+  "short_name": "Giveaways",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
